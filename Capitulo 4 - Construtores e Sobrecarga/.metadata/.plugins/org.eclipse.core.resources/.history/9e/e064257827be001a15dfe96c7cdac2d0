@@ -1,0 +1,16 @@
+public interface PrincipalRetas {
+
+	public static void main(String[] argumentos) {
+		
+		Ponto2D pontoA = new Ponto2D(3.00,5.00);		
+		Ponto2D pontoB = new Ponto2D(1.00,7.00);
+		Ponto2D pontoC = new Ponto2D();
+		
+		RetasNoPlano reta1 = new RetasNoPlano();
+		
+		
+	}
+	
+	
+	
+}

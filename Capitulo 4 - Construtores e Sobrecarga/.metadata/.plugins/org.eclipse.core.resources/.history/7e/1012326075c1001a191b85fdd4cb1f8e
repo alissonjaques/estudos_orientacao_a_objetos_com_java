@@ -1,0 +1,28 @@
+/**
+2 * A classe DemoRegistroAcademicoSemConstrutor, que demonstra o uso de instâncias da
+3 * classe RegistroAcademicoSemConstrutor.
+4 */
+5 class DemoRegistroAcademicoSemConstrutor // declaração da classe
+6 {
+7 /**
+8 * O método main permite a execução desta classe. Este método contém declarações de
+9 * algumas instâncias da classe RegistroAcademicoSemConstrutor, e demonstra seu uso.
+10 * @param argumentos os argumentos que podem ser passados para o método via linha
+11 * de comando, mas que neste caso serão ignorados.
+12 */
+13 public static void main(String[] argumentos)
+14 {
+15 // Declaramos duas referências a instâncias da classe
+16 // RegistroAcademicoSemConstrutor, e as inicializamos com a palavra-chave new
+17 RegistroAcademicoSemConstrutor michael = new RegistroAcademicoSemConstrutor();
+18 RegistroAcademicoSemConstrutor roberto = new RegistroAcademicoSemConstrutor();
+19 // Chamamos o método de inicialização somente para uma das instâncias
+20 michael.inicializaRegistroAcademicoSemConstrutor("Michael Goodrich",34980030,
+21 (byte)2,100.0);
+22 // Calculamos a mensalidade dos dois alunos - mesmo que um não tenha sido
+23 // inicializado !
+24 System.out.println("A mensalidade do Michael é "+michael.calculaMensalidade());
+25 System.out.println("A mensalidade do Roberto é "+roberto.calculaMensalidade());
+26 } // fim do método main
+27
+28 } // fim da classe DemoRegistroAcademicoSemConstrutor

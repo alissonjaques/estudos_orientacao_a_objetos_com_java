@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\licin\Documents\Programação de Computadores\Java\Exercícios\Capítulo 2 - Rafael Santos\Exercícios Orientação a Objetos\.metadata\.plugins\org.eclipse.jdt.core

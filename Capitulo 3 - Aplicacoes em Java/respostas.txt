@@ -1,0 +1,157 @@
+============================Respostas do Capítulo 3 - Programação Orientada a Objetos com JAVA=========================================
+
+Questão 1:
+
+Para que aplicações orientadas a objetos sejam executadas em java é nescessário que exista uma classe, preferencialmente de um único
+método, com o método main. Este método permite que criemos um programa completo (programa que execute um algoritmo), possibilitando 
+a execução de nossas classes e aplicações. Como a classe Ponto2D não possuí esse método, a mesma não pode ser executada pela máquina
+virtual do java.
+
+Questão 2:
+
+public class Nome{
+
+	public static void main(String[] argumentos){
+	
+		System.out.println("Alisson Jaques");
+	
+	}
+
+}
+
+Questão 3:
+
+modelo ImprimeNome
+
+inicio do modelo
+	
+	//operação para impressão do nome
+	operação imprimeNome()
+	
+		inicio
+		
+			dado nome = leituraDoTecladoNome; //componente do nome
+			
+			imprime nome+"mensagem qualquer"; //imprime nome
+			
+		fim
+
+fim do modelo
+
+*programa feito na ide eclipse utilizando o modelo acima
+
+import java.util.Scanner; //importa a classe Scanner, que permite armazenamento de dados em java
+
+/**
+ * A classe MeuNome é uma classe simples que lê um nome fornecido pelo usuário e o imprimi.
+ * @author Alisson Jaques
+ *  
+ * */
+
+public class MeuNome {//declaração da classe
+	/**
+	 * A classe MeuNome possuí apenas um método, que é o método main. Esse método permite a execução dessa
+	 * classe.
+	 * @param argumentos os agurmentos que podem ser passados para o método via linha de comando, mas que
+	 * neste caso serão ignorados
+	 * 
+	 * */
+	public static void main(String[] argumentos) {
+		
+		//Imprimi uma mensagem que solicita o nome do usuário
+		System.out.println("Informe seu nome: ");
+		//Declaração de uma referência para uma instância da classe Scanner
+		Scanner scan = new Scanner(System.in);
+		//A referência nome recebe o conteúdo fornecido pelo usuário
+		String nome = scan.nextLine();
+		//O nome fornecido pelo usuário é impresso na tela com uma mensagem
+		System.out.println(nome+" é uma pessoa esforçada.");
+	}//fim do método main
+	
+}//fim da classe MeuNome
+
+Questão 4:
+
+arquivos LampadaExercício2.java e PrincipalLampada.java
+
+Questão 5:
+
+O método main da classe esta declarado de forma errada, pois o mesmo esta pedindo que seja retornado um número flutuante quando seu
+bloco de comandos for executado. O método main, por padrão, sempre retorna void sendo assim esta classe não pode ser executada.
+Outro erro esta na cópia de dados para uma variável (double piAproximado =355./113.;) pois a expressão fornecida não permite que o
+compilador a execute, pois a mesma possuí tipos numéricos com tipos textuais e a variável é do tipo flutuante, ela espera números
+flutuantes.
+
+Questão 6:
+
+O método main esta declarado errado e existe um retorno ilógico.
+
+Questão 7:
+
+O método main não possuí argumentos, espera-se por padrão que este método tenha um array de Strings com uma referência
+
+Questão 8:
+
+Existe apenas o método main declarado e o mesmo não esta associado a nenhuma classe, assim o código não faz sentido.
+
+Questão 9:
+
+Embora os blocos de comando tenham apenas uma linha, o compilador java crítica blocos de comandos que não usem o separador "{}",
+assim essa classe não pode ser compilada.
+
+Questão 10:
+
+O método main esta declarado errado (a palavra reservada void esta trocada com a static). Nas linhas 8 e 9 a referência amanhã chama
+métodos da classe Data sem ser instânciada, o compilador java acusa erro quando isso ocorre.
+
+Questão 11:
+
+feito na ide eclipse
+
+Questão 12:
+
+Na linha 8 a referência b recebe o conteúdo da referência a, porém a referência a não foi instanciada. Isso causa erro na compilação
+do programa. O compilador java não aceita atribuições entre referências que não foram instânciadas (ainda bem né hehehe).
+
+Questão 13:
+
+criados os arquivos Pais.java e Principal.java (que solucionam a questão)
+
+Questão 14:
+
+criados os arquivos Contador.java e PrincipalContador.java (que solucionam a questão)
+
+Questão 15:
+
+criados os arquivos PoligoRegular.java e Principal.java (que solucionam a questão)
+
+Questão 16:
+
+Não, primeiro porque esta instância foi declarada sem ser associada a nenhuma referência, assim não temos como usar métodos dela. E
+se tivesse sido criada só poderíamos iniciliazar os dados dela, pois a edição deles esta encapsulada, ou seja protegida, dentro da
+classe.
+
+Questão 19:
+
+	solução feita na netbeans
+	
+Questão 23:
+
+Temos três referências, duas apontam para o mesmo objeto e uma aponta para um outro objeto. Embora os objetos tenham campos idêndicos
+os mesmos possuem endereço de memória diferentes, sendo assim comparações entre as referências que apontam para o mesmo objeto retornam
+verdadeiro, enquanto uma comparação entre referências que apontam para objetos diferentes retornam falso.
+
+====================================================Exercícios Complementares=======================================================
+Questão 25:
+
+Quando solicitamos que uma instância seja impressa e essa não possuí o método toString ou algo similar, o compilador imprime a seguinte
+expressão:
+
+nomeDaClasse@endereçoDeMemóriaDaReferência
+
+Questão 30:
+
+O compilador poderá fazer conversões entre tipos automaticamente, sem que o programador tenha controle. Isso pode ocasionar diversos
+erros, pois pode influenciar os resultados do programa. Isto ocorre porque o compilador de java foi desenvolvido para otimizar os tipos
+de dados, se uma variável do tipo short recebe diretamente um valor que pode ser do tipo byte, o compilador faz a conversão do tipo
+desse valor para byte, economizando assim mémoria no sistema.

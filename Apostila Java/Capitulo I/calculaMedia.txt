@@ -1,0 +1,50 @@
+Cálculo da Média das notas de 10 alunos e impressão da quantidade de notas acima e notas abaixo dessa média encontrada
+===================================================================================================================================================================================
+Descrição: Calcula a média das notas de 10 alunos e imprime na tela o valor da média e a quantida de notas abaixo e acima dessa média
+Dados de entrada: 10 notas dos alunos
+Dados de saída: Média das notas, quantidade de notas abaixo da média e quantidade de notas acima da média
+===================================================================================================================================================================================
+Processo componente "Cálculo da média das notas e quantidade da notas abaixo e acima dessa média"
+
+	Obter notas de 10 alunos
+	Declarar variável abaixo e acima e inicializar ambas com 0
+	Calcular a média dessas notas
+	Calcular quantidade de notas abaixo da média encontrada
+	Calcular quantidade de notas acima da média encontrada
+
+FIM
+===================================================================================================================================================================================
+
+===================================================================================================================================================================================
+Processo componente "Calcular a média dessas notas"
+
+	Somar todas as notas e armazenar em soma
+	Dividir soma por 10 e armazenar em media
+	Imprimir soma
+
+FIM
+===================================================================================================================================================================================
+
+===================================================================================================================================================================================
+Processo componente "Calcular quantidade de notas abaixo da média encontrada"
+
+	PARA nota1 ATÉ nota10 FAÇA
+
+		SE (nota_n) < media ENTÃO
+			
+			abaixo = abaixo + 1
+
+		SENÃO
+
+			acima = acima + 1
+
+		FIM-SE
+		
+		nota_n = nota_n + 1
+
+	FIM - SE
+
+	Imprimir abaixo e acima
+
+FIM
+===================================================================================================================================================================================

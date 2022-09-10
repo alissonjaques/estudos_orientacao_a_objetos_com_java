@@ -1,0 +1,29 @@
+public interface PrincipalRetas {
+
+	public static void main(String[] argumentos) {
+		
+		Ponto2D pontoA = new Ponto2D(3.00,5.00);		
+		Ponto2D pontoB = new Ponto2D(1.00,7.00);
+		Ponto2D pontoC = new Ponto2D();
+		
+		RetasNoPlano reta1 = new RetasNoPlano(pontoA,pontoB);
+		RetasNoPlano reta2 = new RetasNoPlano(pontoA);
+		RetasNoPlano reta3 = new RetasNoPlano();
+		RetasNoPlano reta4 = new RetasNoPlano(0.00,6.00,9.00,61.00);
+		RetasNoPlano reta5 = new RetasNoPlano(pontoC,pontoC);
+		
+		System.out.println("A equação da reta1 é: "+reta1);
+		System.out.println("A equação da reta2 é: "+reta2);
+		System.out.println("A equação da reta3 é: "+reta3);
+		System.out.println("A equação da reta4 é: "+reta4);
+		System.out.println("A equação da reta5 é: "+reta5);
+		
+		System.out.println("Comparação entre as retas 1 e 2: "+reta1.comparacaoEntreRetas(reta2));
+		System.out.println("Comparação entre as retas 3 e 3: "+reta3.comparacaoEntreRetas(reta3));
+		System.out.println("Comparação entre as retas 3 e 4: "+reta3.comparacaoEntreRetas(reta4));
+		
+	}
+	
+	
+	
+}

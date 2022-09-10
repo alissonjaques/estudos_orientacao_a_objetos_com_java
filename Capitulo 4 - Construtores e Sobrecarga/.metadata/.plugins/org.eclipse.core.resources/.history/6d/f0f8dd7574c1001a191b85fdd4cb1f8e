@@ -1,0 +1,50 @@
+**
+* A classe RegistroAcademicoSemConstrutor, que contém campos para representar
+* dados simples sobre um registro acadêmico.
+*/
+class RegistroAcademicoSemConstrutor // declaração da classe
+{
+/**
+* Declaração dos campos da classe
+*/
+private String nomeDoAluno; // O nome do aluno
+private int númeroDeMatrícula; // O número de matrícula
+private byte códigoDoCurso; // O código do curso do aluno (1..4)
+private double percentualDeCobrança; // O percentual a ser cobrado do aluno, 0 a 100%
+
+/**
+* O método inicializaRegistroAcademicoSemConstrutor recebe argumentos para
+* inicializar os campos da classe RegistroAcademicoSemConstrutor.
+* @param n o nome do aluno
+* @param m o número de matrícula
+* @param c o código do curso
+* @param p o percentual de bolsa
+*/
+public void inicializaRegistroAcademicoSemConstrutor(String n,int m,byte c,double p)
+{
+nomeDoAluno = n; númeroDeMatrícula = m;
+códigoDoCurso = c; percentualDeCobrança = p;
+} // fim do método inicializaRegistroAcademicoSemConstrutor
+
+/**
+* O método calculaMensalidade calcula e retorna a mensalidade do aluno usando
+* o código do seu curso e o percentual de cobrança.
+* @return o valor da mensalidade do aluno
+*/
+3public double calculaMensalidade()
+{
+36 double mensalidade = 0; // valor deve ser inicializado
+37 // Primeiro, dependendo do curso do aluno, determina a mensalidade básica
+38 if (códigoDoCurso == 1) // Arquitetura
+39 mensalidade = 450.00;
+40 if (códigoDoCurso == 2) // Ciência da Computação
+41 mensalidade = 500.00;
+42 if (códigoDoCurso == 3) // Engenharia da Computação
+43 mensalidade = 550.00;
+44 if (códigoDoCurso == 4) // Zootecnia
+45 mensalidade = 380.00;
+46 // Agora calcula o desconto com o percentual de cobrança. Se o percentual de
+47 // cobrança for zero, a mensalidade também o será.
+48 if (percentualDeCobrança == 0) mensalidade = 0;
+49 // Senão, calculamos com uma fórmula simples.
+50 else mensalidade = mensalidade * 100.0 / percentualDeCobrança;

@@ -1,0 +1,76 @@
+modelo PoligonoRegular
+
+inicio
+
+	dado quantidadeLados, lado;
+	
+	operação inicializaPoligoRegular(umaQuantidadeLados, umValorLado)
+		
+		inicio
+		
+			quantidadeLados = umaQuantidadeLados;
+			lado = umValorLado;
+		
+		fim
+	
+	fim
+	
+	operação éIgual(OutroPoligono)
+	
+		inicio
+		
+			se (quantidadeLados=OutroPoligono.quantidadeLados) e (lado=OutroPoligono.lado)
+				
+				retorna verdadeiro
+		
+			senão
+				
+				retorna falso
+			
+			fim
+		
+		fim
+	
+	fim
+	
+	operação calculaÁrea()
+	
+		inicio
+		
+		dado area, apotema;
+		
+		apotema = lado/(2*tg(180°/quantidadeLados));
+		
+		area = (quantidadeLados*lado*apotema)/2;
+		
+		retorna area;
+				
+		fim
+		
+	fim
+	
+	operação calculaDiagonal(quantidadeLados)
+	
+		inicio 
+		
+			dado numeroDiagonais;
+			
+			numeroDiagonais = (quantidadeLados(quantidadeLados-3))/2;
+			
+			retorna numeroDiagonais;
+			
+		fim
+	
+	fim
+	
+	operação toString()
+		
+		inicio
+		
+			retorna poligono; //formato de texto
+	
+		fim
+		
+	fim
+	
+fim do modelo	

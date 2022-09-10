@@ -1,0 +1,31 @@
+==============================================Respostas Exercícios Capítulo 6 ==============================================
+Questão 6.10:
+
+Esse método, quando chamado, imprimiria uma data com todos os meses do ano, um seguido ao outro.
+Desvantagem, primeiro que o método não faria o que foi proposto (representar os campos encapsulados do objeto
+formatados) e segundo que ele executaria todos os if's, o que demandaria mais tempo de processamento.
+
+Questão 6.12:
+
+Essa outra condição poderia ser usada: contador <= tentativas
+
+Questão 6.13
+
+linha 13: esta igualdade nunca ocorrerá, pois 99999 não pode ser armazenado em um dado do tipo byte.
+
+Questão 6.14
+
+Não pode ocorrer mais de um método default no corpo do switch (linhas 15 e 21). Não podemos ter valores iguais nas cases 
+(linhas 16 e 20). Estes erros ocasionarão falha na compilação do programa.
+
+Questão 6.15
+
+Uma vez que a comparação retorne true, todos os blocos de comandos das cases, abaixo da case de comparação, incluindo essa,
+serão executados. Por exemplo, para o caso da classe DataSwitch, se mês = 4 a variável númeroDeDias receberá 31 e não 30.
+
+Questão 6.28
+
+Vantagens: É mais simples utilizar a classe, pois não é necessário criar objetos para a mesma. O código também fica mais enxuto e intuitivo.
+
+Desvantagens: Alguns métodos anteriores, que comparavam objetos da classe, bem como o método toString, tornaram-se inúteis. Em outras palavras, a classe 
+ficou mais pobre de possibilidades.

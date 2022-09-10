@@ -1,0 +1,23 @@
+Mostra os Trinta Primeiros Números da Série de Fibonacci
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Descrição: Imprime na tela os 30 primeiros números da série de Fibonacci
+Entradas: Não possuí
+Saídas: 30 primeiros números Fibonacci
+Obser: Os dois primeiros termos da sequência de Fibonacci valem 1
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Processo componente "Imprime na tela 30 primeiros números Fibonacci"
+
+	Inicializar primeiro com 1
+	Inicializar segundo com 1
+	Inicializar numero com 0
+	Inicializar termo com 1
+
+	ENQUANTO termo<=30 FAÇA
+		
+		numero = primeiro + segundo
+		primeiro = segundo
+		segundo = numero
+		termo = termo + 1
+
+	FIM-SE
+
+FIM - Processo componente "Imprime na tela os 30 primeiros números Fibonacci"
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

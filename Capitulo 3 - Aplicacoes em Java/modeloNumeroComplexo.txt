@@ -1,0 +1,89 @@
+modelo NumeroComplexo
+
+inicio do modelo
+
+	dado real, imaginario;
+	
+	operação inicializaNumeroComplexo(umReal, umImaginario)
+	
+		inicio
+			
+			real = umReal;
+			imaginario = umImaginario;
+			
+		fim
+	
+	fim
+	
+	operação toString()
+	
+		inicio
+		
+			imprimi real + imaginario*i;
+		
+		fim
+		
+	fim
+	
+	operação éIgual(umNumeroComplexo)
+	
+		inicio
+		
+			se (real=umNumeroComplexo.real)e(imaginario=umNumeroComplexo.imaginario)
+			
+				retorna verdadeiro
+				
+			senão
+			
+				retorna falso
+				
+			fim-se
+		
+		fim
+	
+	fim
+	
+	operação somaComplexo(umNumeroComplexo)
+	
+		inicio
+		
+			retorna (real+umNumeroComplexo.real)"+"(imaginario+umNumeroComplexo.imaginario)"i";
+	
+		fim
+	
+	fim
+	
+	operação subtraiComplexo(umNumeroComplexo)
+	
+		inicio
+		
+			retorna (real-umNumeroComplexo.real)"+"(imaginario-umNumeroComplexo.imaginario)"i";
+		
+		fim
+		
+	fim
+	
+	operação multiplicaComplexo(umNumeroComplexo)
+	
+		inicio
+		
+			retorna ((real*umNumeroComplexo.real)-(imaginario*umNumeroComplexo.imaginario))"+"((real*umNumeroComplexo.imaginario)+(imaginario*umNumeroComplexo.real))"i";
+		
+		fim
+		
+	fim
+	
+	operação divideComplexo(umNumeroComplexo)
+	
+		inicio
+		
+			
+			retorna (((real*umNumeroComplexo.real)+(imaginario*umNumeroComplexo.imaginario))/((umNumeroComplexo.real*umNumeroComplexo.real)+(umNumeroComplexo.imaginario*umNumeroComplexo.imaginario)))
+		
+					+ ((imaginario*umNumeroComplexo.real)-(real*umNumeroComplexo.imaginario))/((umNumeroComplexo.real*umNumeroComplexo.real)+(umNumeroComplexo.imaginario*umNumeroComplexo.imaginario))"i"
+		
+		fim
+	
+	fim
+	
+fim do modelo

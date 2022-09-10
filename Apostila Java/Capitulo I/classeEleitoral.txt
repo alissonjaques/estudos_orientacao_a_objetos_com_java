@@ -1,0 +1,31 @@
+Informa Classe Eleitoral do Usuário
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Descrição: Informa a que classe eleitoral o usuário pertence
+Dados de Entrada: Idade do usuário
+Dados de Saída: A classe eleitoral do usuário
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Processo componente "Informa classe eleitoral"
+
+	Obter idade do usuário
+	Definir Classe Eleitoral
+	Mostrar na tela Classe Eleitoral
+
+FIM - Processo componente "Informa classe eleitoral"
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Processo componente "Definir Classe Eleitoral"
+
+	SE idade menor que 16 anos ENTÃO
+		
+		Exibir a mensagem: Não pode votar.
+
+	SENÃO SE idade maior do que ou igual a 16 anos ou menor do que ou igual a 17 ou ainda maior do que 65 anos ENTÃO
+
+		Exibir a mensagem: Votar é facultativo.
+
+	SENÃO SE idade entre 18 e 65 anos (incluindo esse) ENTÃO
+
+		Exibir mensagem: Votar é obrigatório.
+
+	FIM-SE
+
+FIM - Processo componente "Definir Classe Eleitoral"
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	

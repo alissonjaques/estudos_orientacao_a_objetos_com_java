@@ -1,0 +1,80 @@
+modelo SiteNaInternet
+
+inicio do modelo
+	
+	dado nome, endereçoURL, dataPrimeiroAcesso, dataUltimoAcesso, númeroDeVisitas, vetorAcessos;
+	
+	construtor(dado umNome, dado umEndereçoURL)
+	
+		inicio
+		
+			nome = umNome;
+			endereçoURL = umEndereçoURL;	
+	
+		fim
+	
+	construtor(dado umNome)
+		
+		inicio
+		
+			nome = umNome;
+			endereçoURL = "";
+	
+		fim
+	
+	operação acessa()
+		
+		inicio
+			
+			Data dataAcesso = data;
+			Classe Contador = contadora;		
+			vetorAcessos[contadora.Conta()] = data; 
+	
+		fim
+	
+	operação encontraUltimaData()
+	
+		inicio
+		
+			PARA indice = 0 até indice = n FAÇA
+			
+				SE string for vazia ENTÃO
+				
+						RETORNA indice;
+					
+				
+				FIM-SE
+			
+				indice++;
+			
+			FIM-PARA
+			
+			RETORNA n;
+
+		fim
+		
+	operação ultimoAcesso()
+	
+		inicio
+			
+			dataUltimoAcesso = vetorAcessos[encontraUltimaData];
+			
+		fim
+		
+	operação primeiroAcesso()
+	
+		inicio
+			
+			dataPrimeiroAcesso = vetorAcessos[0];
+		
+		fim
+			
+	operação toString()
+	
+		inicio
+		
+			imprime todos os dados do modelo SiteNaInternet (formatados)
+			
+		fim		
+		
+fim do modelo

@@ -1,0 +1,241 @@
+/**
+ *  A classe RetasNoPlano possuí campos e métodos que representam uma
+ *  reta qualquer no plano cartesiano ortogonal.
+ *  
+ *  @author Alisson Jaques 
+ * 
+ * */
+public class RetasNoPlano { // declaração da classe
+	
+	// declaração dos campos da classe (dois pontos
+	// pertencentes à classe Ponto2D)
+	
+	private Ponto2D a; 
+	private Ponto2D b;
+	
+	/**
+	 *  O construtor para a classe RetasNoPlano que recebe dois objetos
+	 *  da classe Ponto2D (dois pontos) e inicializa os campos da classe
+	 *  com os objetos passados como argumentos.
+	 *  @param umA um objeto da classe Ponto2D que representa um ponto no plano
+	 *  @param umB um objeto da classe Ponto2D que representa um ponto no plano
+	 *  
+	 * */	
+	RetasNoPlano(Ponto2D umA, Ponto2D umB){
+		
+		// as referências apontam para uma nova instância da classe Ponto2D,
+		// assim o programador usuário da classe pode reutilizar referências
+		// sem se preocupar
+		a = new Ponto2D(umA.retornaCoordenadaX(),umA.retornaCoordenadaY());
+		b = new Ponto2D(umB.retornaCoordenadaX(),umB.retornaCoordenadaY());
+		
+	} // fim do construtor com todos os argumentos
+	
+	/**
+	 *  O construtor para a classe RetasNoPlano que recebe apenas um argumento,
+	 *  que é uma instância da classe Ponto2D, e inicializa os campos da classe.
+	 *  Um com o valor passado como parâmetro e o outro o ponto default chamado
+	 *  pelo construtor sem argumentos da classe Ponto2D.
+	 *  @param umA um objeto da classe Ponto2D que representa um ponto no plano 
+	 * 
+	 * */
+	RetasNoPlano(Ponto2D umA){
+		
+		a = new Ponto2D(umA.retornaCoordenadaX(),umA.retornaCoordenadaY());
+		b = new Ponto2D(); // aciona o construtor default da classe Ponto2D. b(0,0)
+		
+	} // fim do construtor com apenas um argumento, que é um objeto da classe Ponto2D
+	
+	/**
+	 *  O construtor para a classe RetasNoPlano que não possuí argumentos e inicializa
+	 *  os campos da classe com valores default (pontos (0.0)), utilizando o construtor
+	 *  default da classe Ponto2D. 
+	 * 
+	 * */
+	RetasNoPlano(){
+		
+		a = new Ponto2D();
+		b = new Ponto2D();
+		
+	} // fim do construtor default
+	
+	/**
+	 *  O construtor para a classe RetasNoPlano que recebe quatro argumentos flutuantes
+	 *  que representam coordenadas de dois pontos. O construtor inicializa os campos da
+	 *  classe criando instâncias da classse Ponto2D com os argumentos passados e as as-
+	 *  sociando com as suas referências.
+	 *  @param x1 a coordenada x do ponto a
+	 *  @param y1 a coordenada y do ponto a
+	 *  @param x2 a coordenada x do ponto b
+	 *  @param y2 a coordenada y do ponto b 
+	 * 
+	 * */	
+	RetasNoPlano(double x1, double y1, double x2, double y2){
+		
+		a = new Ponto2D(x1,y1);
+		b = new Ponto2D(x2,y2);
+				
+	} // fim do construtor com quatro argumentos flutuantes
+	
+	/**
+	 *  O método calculaCoeficienteAngular não possuí argumentos e retorna o coeficiente
+	 *  angular da reta encapsulada, se o mesmo existir. Caso o coeficiente angular não 
+	 *  exista este método retorna o valor constante 0, representando uma tangente indefinida.
+	 *  @return 0 um valor constante que representa uma tangente sem definição
+	 *  @return ((b.retornaCoordenadaY()-a.retornaCoordenadaY())/(b.retornaCoordenadaX()-a.retornaCoordenadaX())) o coeficiente angular da reta encapsulada
+	 *  @return ((a.retornaCoordenadaY()-b.retornaCoordenadaY())/(a.retornaCoordenadaX()-b.retornaCoordenadaX())) o coeficiente angular da reta encapsulada
+	 *  
+	 * */
+	public double calculaCoeficienteAngular() {
+		
+		if(b.retornaCoordenadaY() > a.retornaCoordenadaY()) { // se a coordenada y do ponto b for maior do que a coordenada y do ponto a, faça:
+			
+			if(b.retornaCoordenadaX() == a.retornaCoordenadaX()) { // se a coordenada x do ponto b for igual à coordenada x do ponto a
+				
+				return 0; // retorna 0 (tangente sem definição) 
+				
+			}
+			else { // senão
+				
+				// retorna o coeficiente angular m = (yb-ya)/(xb-xa)
+				return ((b.retornaCoordenadaY()-a.retornaCoordenadaY())/(b.retornaCoordenadaX()-a.retornaCoordenadaX()));
+			
+			} // fim-se
+			
+		} // senão se
+		else if(a.retornaCoordenadaY() > b.retornaCoordenadaY()) { // se a coordenada y do ponto a for maior do que a coordenada y do ponto b, faça:
+			
+			if(b.retornaCoordenadaX() == a.retornaCoordenadaX()) { // se a coordenada x do ponto b for igual à coordenada x do ponto a
+				
+				return 0; // retorna 0 (tangente sem definição)
+				
+			}
+			else { // senão
+				
+				// retorna o coeficiente angular m = (ya-yb)/(xa-xb)
+				return ((a.retornaCoordenadaY()-b.retornaCoordenadaY())/(a.retornaCoordenadaX()-b.retornaCoordenadaX()));
+			
+			} // fim-se
+						
+		} // senão
+		else { // y terá valor constante
+			
+			return 0; // retorna 0 (tangente sem definição)
+			
+		} // fim-se
+				
+	} // fim do método calculaCoeficienteAngular
+	
+	/**
+	 *  O método calculaCoeficienteLinear não possuí argumentos, ele calcula e retorna
+	 *  o coeficiente linear da reta encapsulada.
+	 *  @return n um valor flutuante que representa o coeficiente linear da reta 
+	 * 
+	 * */
+	public double calculaCoeficienteLinear() {
+		
+		// declaração de variáveis auxiliares
+		double m, n;
+		
+		// fazemos a variável auxiliar m receber o conteúdo do método calculaCoeficienteAngular,
+		// m passa a ser a inclinação da reta.
+		m = calculaCoeficienteAngular();
+		
+		// através de chamadas aos métodos da classe Ponto2D, fazemos n armazenar o valor correspon-
+		// dente ao coeficiente linear da reta encapsulada.
+		n = a.retornaCoordenadaY() - (m*a.retornaCoordenadaX()); // n = ya - m*xa
+		
+		return n; // retornamos o coeficiente linear
+		
+	} // fim do método calculaCoeficienteLinear
+		
+	/**
+	 *  O método comparacaoEntreRetas possuí um único argumento que uma instância da própria classe
+	 *  RetasNoPlano. Ele compara a reta encapsulada com a passada como argumento e retorna uma string,
+	 *  que indica se as retas são paralelas, concorrentes, perpendiculares etc.
+	 *  @param outraReta uma instância da própria classe RetasNoPlano
+	 *  @return resultado uma string que indica o resultado de comparação dos objetos 
+	 * 
+	 * */
+	public String comparacaoEntreRetas(RetasNoPlano outraReta) {
+		
+		// declaração de referência auxiliar
+		String resultado;
+		
+		if(calculaCoeficienteAngular()==outraReta.calculaCoeficienteAngular()) { // se os coeficientes angulares da reta encapsulada forem iguais aos da reta passada como argumento
+			
+			if(calculaCoeficienteLinear()==outraReta.calculaCoeficienteLinear()) { // se os coeficientes lineares da reta encapsulada forem iguais aos da reta passada como argumento
+				
+				resultado = "As retas são coincidentes!" + "\n"; 
+				
+				return resultado; // retorna: As retas são coincidentes!
+				
+			}
+			else { // senão
+				
+				resultado = "As retas são paralelas!" + "\n";
+				
+				return resultado; // retorna: As retas são paralelas!
+			
+			} // fim-se
+			
+		}
+		else { // senão
+			
+			if(calculaCoeficienteAngular()==-(1/outraReta.calculaCoeficienteAngular())) { // se o coeficiente angular da reta encapsulada for inversamente proporcional ao da reta
+				                                                                          // passada como argumento
+				
+				resultado = "As retas são perpendiculares!" + "\n";
+				
+				return resultado; // retorna: As retas são perpendiculares!
+				
+			}
+			else { // senão
+				
+				resultado = "As retas são concorrentes!" + "\n";
+				
+				return resultado; // retorna: As retas são concorrentes!
+			
+			} // fim-se
+			
+		} // fim-se
+		
+	} // fim do método comparacaoEntreRetas
+	
+	/**
+	 *  O método clona recebe como argumento um outro objeto da classe RetasNoPlano e retorna
+	 *  um referência a uma nova instância, que contém os mesmos campos do objeto encapsulado.
+	 *  @param outraReta uma instância da própria classe RetasNoPlano
+	 *  @return clone um apontador para uma nova referência que contém os mesmos campos do objeto encapsulado
+	 * 
+	 * */	
+	public RetasNoPlano clona(RetasNoPlano outraReta) {
+		
+		// declaramos uma nova referência e fazemos ela apontar para uma nova instância que contêm
+		// os mesmos campos do objeto encapsulado
+		RetasNoPlano clone = new RetasNoPlano(outraReta.a,outraReta.b);
+		
+		return clone; // retorno da referência clone
+		
+	} // fim do método clona
+	
+	/**
+	 *  O método toString não possuí argumentos e retorna os campos da classe formatados.
+	 *  @return equacaoDaReta uma string, que representa a equação da reta encapsulada, no formato y = mx + b
+	 * 
+	 * */
+	public String toString() {
+		
+		// declaração de referência auxiliar
+		String equacaoDaReta = "";
+		
+		equacaoDaReta = equacaoDaReta + "y = ";
+		equacaoDaReta = equacaoDaReta + calculaCoeficienteAngular()+"x";
+		equacaoDaReta = equacaoDaReta + " + " + "(";
+		equacaoDaReta = equacaoDaReta + calculaCoeficienteLinear()+")";
+		
+		return equacaoDaReta; // retorna os campos do objeto encapsulado no formato y = mx + b
+		
+	} // fim do método toString 
+
+} // fim da classe RetasNoPlano

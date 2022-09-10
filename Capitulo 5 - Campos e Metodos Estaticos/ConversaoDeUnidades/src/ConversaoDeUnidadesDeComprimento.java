@@ -1,0 +1,109 @@
+/**
+* A classe ConversaoDeUnidadesDeComprimento, contém vários métodos estáticos que
+* convertem unidades de comprimento. Esta classe não tem campos, e todos os seus
+* métodos são declarados como static, assim não é necessário criar instâncias desta
+* classe para usar os métodos. Para que os métodos possam ser acessados de qualquer
+* outra classe eles são declarados como public.
+*/
+class ConversaoDeUnidadesDeComprimento{// declaração da classe
+
+	/**
+	 * O método polegadasParaCentímetros converte o valor passado em polegadas para
+	 * centímetros.
+	 * @param polegadas o número de polegadas
+	 * @return o número de centímetros correspondente ao número de polegadas
+	 */
+	public static double polegadasParaCentímetros(double polegadas){
+		
+		double centímetros = polegadas*2.54;
+
+		return centímetros;
+
+	} // fim do método polegadasParaCentímetros
+	
+	/**
+	 * O método centímetrosParaPolegadas converte o valor passado em centímetros para
+	 * polegadas.
+	 * @param centímetros o número de centímetros
+	 * @return o número de polegadas correspondente ao número de centímetros 
+	 * 
+	 * */
+	public static double centímetrosParaPolegadas(double centímetros){
+		
+		double polegadas = centímetros*0.3937;
+		
+		return polegadas;
+		
+	} // fim do método centímetrosParaPolegadas
+	
+	/**
+	 * O método metrosParaPolegadas converte o valor passado em metros para
+	 * polegadas.
+	 * @param metros o número de metros
+	 * @return o número de polegadas correspondente ao número de metros 
+	 * 
+	 * */
+	public static double metrosParaPolegadas(double metros) {
+		
+		double polegadas = metros*39.37;
+		
+		return polegadas;
+		
+	} // fim do método metroParaPolegadas
+	
+	/**
+	 * O método quilômetrosParaMilhas converte o valor passado em quilômetros para
+	 * milhas.
+	 * @param quilômetros o número de quilômetros
+	 * @return o número de milhas correspondente ao número de quilômetros 
+	 * 
+	 * */
+	public static double quilômetrosParaMilhas(double quilômetros) {
+		
+		double milhas = quilômetros*0.6214;
+		
+		return milhas;
+		
+	} // fim do método quilômetrosParaMilhas
+	
+	
+	/**
+	 * O método pésParaCentímetros converte o valor passado em pés para centímetros.
+	 * @param pés o número de pés
+	 * @return o número de centímetros correspondente ao número de pés
+	 */
+	public static double pésParaCentímetros(double pés){
+		
+		double centímetros = pés*30.48;
+
+		return centímetros;
+
+	}
+
+	/**
+	 * O método milhasParaQuilômetros converte o valor passado em milhas para quilômetros.
+	 * @param milhas o número de milhas
+	 * @return o número de quilômetros correspondente ao número de milhas
+	 */
+	public static double milhasParaQuilômetros(double milhas){
+
+		double quilômetros = milhas*1.609;
+
+		return quilômetros;
+
+	} // fim do método milhasParaQuilômetros
+		
+	/**
+	 * O método quilômetrosParaPés converte o valor passado em quilômetros para pés.
+	 * @param quilômetros o número de quilômetros
+	 * @return o número de pés correspondente ao número de quilômetros
+	 */
+	public static double quilômetrosParaPés(double quilômetros) {
+		
+		double pés = quilômetros*3280.8;
+		
+		return pés;
+			
+	} // fim do método quilômetrosParaPés
+
+} // fim da classe ConversaoDeUnidadesDeComprimento

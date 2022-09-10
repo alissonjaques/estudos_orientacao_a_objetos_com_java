@@ -1,0 +1,78 @@
+/**
+ * A classe veículo possuí atributos e métodos que representam um veículo qualquer
+ *
+ * @author Alisson Jaques 
+ *
+ */
+public class Veiculos { //declara a classe
+	
+	/**
+	 *  Declaração dos campos da classe
+	 * 
+	 */
+	
+	private String nomeVeiculo;
+	private short quantidadeMaximaPassageiros;
+	private String tipoVeiculo;
+	private byte numeroDeRodas;
+	
+	//Inicializa simultaneamente os dados da classe veículo
+	
+	public void registraVeiculo(String nome, short quantidade, String tipo, byte quantidadeRodas) {
+		
+		nomeVeiculo = nome;
+		quantidadeMaximaPassageiros = quantidade;
+		tipoVeiculo = tipo;
+		numeroDeRodas = quantidadeRodas;		
+		
+	}
+	
+	//Verifica se o veículo é capaz de andar na terra
+	
+	public boolean andarNaTerra(String tipo) {
+		
+		if(tipo == "carro" || tipo == "moto" || tipo == "Caminhao") {
+			
+			return true;
+			
+		}
+		else {
+			
+			return false;
+		}
+				
+	}
+	
+	//Verifica se o veículo é capaz de andar na Água
+	
+		public boolean andarNaAgua(String tipo) {
+			
+			if(tipo == "iate" || tipo == "navio" || tipo == "fragata") {
+				
+				return true;
+				
+			}
+			else {
+				
+				return false;
+			}
+					
+	}
+		
+	//Verifica se o veículo é capaz de andar na terra
+		
+	public boolean andarNoCéu(String tipo) {
+			
+		if(tipo == "aviao" || tipo == "helicoptero" || tipo == "jato") {
+			
+			return true;
+			
+		}
+		else {
+				
+			return false;
+		}
+					
+	}
+	
+}//Fim da classe Veiculos

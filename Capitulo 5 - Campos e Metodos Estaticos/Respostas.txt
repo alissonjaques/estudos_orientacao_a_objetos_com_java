@@ -1,0 +1,21 @@
+==========================================Respostas Exercícios Capítulo 5=============================================================
+
+Questão 1:
+
+Porque, se fossem declarados, outras classes não teriam acesso algum a esses campos, o que tornaria inútil o fato deles serem estáticos.
+Somente a classe ConstantesMatematicas teria acesso aos mesmos (isso quebraria o conceito de biblioteca de campos/métodos, que foi o
+princípio por traz da criação dessa classe).
+
+Questão 5:
+
+Poderá ocorrer loopings infinitos, pois o método main poderia acabar chamando a si mesmo infinitas vezes (até atingir a capacidade de 
+memória do computador).
+
+Questão 12:
+
+Ocorrerá erro na compilação da classe. Pois a sintaxe de constantes em java exige a atribuição no momento da declaração da mesma.
+
+Questão 21:
+
+Sim, desde que a assinatura dos métodos sejam diferentes. O método main principal (que possuí um vetor string de argumentos) tem que 
+ser o responsável por chamar os outros métodos em cascata.

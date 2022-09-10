@@ -1,0 +1,260 @@
+==================================================Respostas Capítulo 2================================================================
+2.1
+Observação: Foi considerado como critério aqui apenas o de o compilador não acusar erro.
+
+Podem: four, from e FOR - começam com uma letra, é formado por letras e não são palavras reservadas
+Não podem: 4 - não pode começar com número
+		   for - é uma palavra reservadas
+
+2.3
+Podem: nome, nOmE, newnome, nome__ e nome$1 - começam com uma letra e são formados por letras
+	   um_nome, nome__ - o símbolo '_' é considerado um caracter alfabético válido
+	   nome$1 - o símbolo $ é considerado uma letra, sendo assim esse nome é válido
+
+Não Podem: nome! - '!' não é um símbolo reservado para negação condicional
+		   nome(1) - '(' e ')' não são considerados letras nem números, sendo assim 'nome(1)' é inválido
+
+2.5
+Podem: classe, Class, class2 - começam com letras e são formados por letras e números, os nomes são muito parecidos com a palavra
+reservada 'class' sendo assim não é sugerido a utilização dos mesmos.
+
+Não podem: class - palavra reservada
+	       2class - começa com número
+		   
+2.7
+
+Podem: statico, estatico, estático, ESTÁTICO - começam com letra e são compostos por letras, 'estático' e 'ESTÁTICO' não são sugeridos
+para nome de classes, pois possuem acento, o que pode gerar erros na nomeação de arquivos pelo compilador.
+
+Não podem: static - palavra reservada
+
+2.9
+
+A. Falso, pois o tipo boolean tem como faixa de valores possíveis apenas às constantes true e false.
+B. Falso, valores do tipo short podem estar entre -32768 a 32767
+C. Verdadeiro, pois valores do tipo float podem armazenar mais números, em seu intervalo, em relação ao tipo long
+D. Falso, pois o intervalo inteiro do tipo char é de 0 a 65535
+E. Falso, pois em java, devido ao uso da máquina virtual, todos os tipos preservam as mesmas características independentemente do sistema
+operacional ou computador.
+F. Verdadeiro, pois o tipo byte representa inteiros com 8 bits de precisão, com sinal.
+G. Verdadeiro, quando comparados fornecem como resultado uma constante booleana (true ou false).
+H. Verdadeiro, esse tipo representa inteiros com 32 bits de precisão, com sinal.
+I. Falso, o tipo char representa caracteres unicodes e precisa, para cada caracter, de dois bytes de momória.
+J. Verdadeiro, ambos os tipos ocupam 8 bytes de memória, porém possuem estruturas diferentes caracterizadas pela diferença entre os conjuntos
+inteiro e real (no caso flutuante).
+
+2.10
+
+*O número de municípios de um estado do Brasil.
+
+tipo escolhido: short
+
+exemplo de comando: private short municipio; //short é suficiente para representar o número de municípios de um estado do Brasil
+
+*O nome de um estado do Brasil.
+
+classe escolhida: String
+
+exemplo de comando: private String nomeEstado; //a classe String é suficiente para representar o nome de um estado do Brasil
+
+*A população de um estado do Brasil
+
+tipo escolhido: int
+
+exemplo de comando: private int quantidadePopulacaoEstado; //Como a população inteira do brasil esta na faixa 209,3 milhões
+o tipo int é mais do que suficiente para representar a população de um estado do Brasil
+
+*Área do Brasil em km².
+
+tipo escolhido: int
+
+exemplo de comando: private int areaBrasil; //Como a área do Brasil é de 8.511.000 km² esta pode ser representada de forma segura e
+eficiente pelo tipo int
+
+*A população de todos os países do mundo.
+
+tipo escolhido: long
+
+exemplo de comando: private long populacaoMundial; //A população mundial esta na faixa de 7,7 bilhões assim o tipo mais adequado seria
+o long
+
+exemplos de classes para o problema:
+
+class Brasil{
+
+	private short municipio;
+	private String nomeEstado;
+	private int areaBrasil;
+	private long populacaoBrasil;
+	
+	public long retornaPopulacaoBrasil(long populacaoBrasil){
+	
+		return populacaoBrasil;
+	
+	}
+	
+}
+
+class Mundo{
+
+	private long populacaoMundial;
+	Brasil brasil = new Brasil();
+	Pais pais = new Pais();
+	.
+	.
+	.
+	Paisn paisn = new Paisn();
+	
+	populacaoMundial = brasil.retornaPopulacaoBrasil+pais.retornaPopulacaoPais+......+paisn.retornaPopulacaoPaism;
+	
+	public void mostraPopulacao{
+	
+		System.out.println("A população mundial é " + populacaoMundial +"habitantes.");
+
+	}
+	
+}
+
+2.13
+
+*A altura de uma pessoa em metros.
+
+tipo escolhido: float
+
+exemplo de comando: private float altura; //float é suficiente para representar a altura de uma pessoa
+
+*O peso de uma pessoa em quilos.
+
+tipo escolhido: float
+
+exemplo de comando: private float peso; //O peso pode ser representado por números reais e dificilmente chega a 1 tonelada
+
+*A temperatura corporal de uma pessoal.
+
+tipo escolhido: float
+
+exemplo de comando: private float temperatura; //As escalas de temperatura não ultrapassam o tamanho de 500 unidades inteiras e podem
+ser representadas por números fracionados, sendo assim o tipo mais adequadado é o float
+
+*O sexo de uma pessoa.
+
+tipo escolhido: char
+
+exemplo de comando: private char sexo; //Podemos usar as siglas 'm' para masculino e 's' para feminino, assim poderemos utilizar o tipo
+char e economizaremos memória
+
+*Altura de uma pessoa em milímetros
+
+tipo escolhido: float
+
+exemplo de comando: public float alturaMilimetros(float altura){ //uma pessoa não passa de 3 metros de altura, e altura pode ser um número fracionado
+
+					private float altMili;
+					
+					altMili = altura*1000;
+					
+					return altMili;
+					
+					}
+Exemplos de classes para este problema:
+
+class Pessoa{
+
+	private float altura, peso, temperatura;
+	private char sexo;
+	
+	/*poderia haver um método de inicialização dos campos aqui*/
+	
+	public float alturaMilimetros(float altura){
+
+					private float altMili;
+					
+					altMili = altura*1000;
+					
+					return altMili;
+					
+	}
+	
+}
+
+2.15
+
+Não há erro aparente, talvez dependendo da regra de negócio a variável títuloDeEleitor poderá ser do tipo String (caso seja nescessário
+representar espaços etc);
+
+2.16 e 2.17
+/**
+*A classe Lampada representa uma lâmpada em uso. Ela possuí métodos para alteração de seu estado (acesa ou apagada)
+*e mostra o estado no qual se encontra.
+*/
+class Lampada{
+	
+	//declara o campo da classe
+	private boolean estadoDaLampada; //indica se esta ligada ou não
+
+	public boolean acendeLampada(boolean estadoDaLampada){ //acende a lâmpada (true = aceso)
+	
+		estadoDaLampada = true;
+		
+		return estadoDaLampada;
+
+	}
+	
+	public boolean apagaLampada(boolean estadoDaLampada){ //apaga a lâmpada (false = apagado)
+	
+		estadoDaLampada = false;
+		
+		return estadoDaLampada;
+
+	}
+	
+	public void mostraEstado(boolean estadoDaLampada){// mostra o estado da lâmpada
+		
+		if(estadoDalampada==true){//se lâmpada esta acesa imprime aceso
+			
+			System.out.println("A lâmpada esta acesa");
+			
+		}
+		else{//se não imprimi apagado
+			
+			System.out.println("A lâmpada esta apagada");
+			
+		}	
+	
+	}
+	
+	public boolean estaLigada(boolean estadoDaLampada){//verifica se a lâmpada esta ligada ou não
+		
+		if(estadoDalampada==true){//se lâmpada esta acesa retorna ligado
+			
+			return true;
+			
+		}
+		else{//se não retorna apagado
+			
+			return false;
+			
+		}
+		
+		
+	}
+
+}
+
+Para representar o campo estado podemos utilizar o tipo de dado boolean, pois o mesmo permite apenas dois estados true e false
+(true=aceso e false=apagado).
+
+2.18
+
+a variável ligada é do tipo boolean, sendo assim pode ter apenas como valores true ou false. Assim os comandos:
+
+ligada = 1;
+
+ligada = 0; 
+
+estão errados. A escolha do nome ligado para a variável também não é muito intuitiva, podendo causar erros de interpretação.
+
+2.23
+
+O método da classe esta errado, ele usa as variáveis real e imaginário, mas não as passa como parâmetros. Esse métedo retorna dois valores
+flutuantes, o correto é apenas retornar um valor por método.

@@ -1,0 +1,13 @@
+public class RetasNoPlano {
+	
+	private Ponto2D A;
+	private Ponto2D B;
+	
+	RetasNoPlano(Ponto2D umA, Ponto2D umB){
+		
+		A = new Ponto2D(umA.retornaCoordenadaX(),umA.retornaCoordenadaY());
+		B = new Ponto2D(umB.retornaCoordenadaX(),umB.retornaCoordenadaY());
+		
+	}
+
+}

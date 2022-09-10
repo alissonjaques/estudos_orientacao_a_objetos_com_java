@@ -1,0 +1,46 @@
+modelo Pais
+
+inicio do modelo
+
+	dado nome, área, população, língua; //componentes de um país
+	
+	operação inicializaPaís (umNome, umaÁrea, umaPopulação, umaLíngua) //inicializa simultaneamente todos os dados do modelo
+		
+		inicio
+			
+			nome = umNome;
+			área = umaÁrea;
+			população = umaPopulação;
+			língua = umaLíngua;
+		
+		fim
+	
+	fim
+	
+	operação éIgual(umPais) //verifica se dois modelos representam o mesmo país
+		
+		inicio
+			
+			//se os dados dos modelos passados são iguais
+			se (nome = umPais.nome) e (área = umPais.área) e (população = umPais.população) e (língua = umPais.língua)
+				retorna verdadeiro; //então retorna verdadeiro
+			senão
+				retorna falso;//senão retorna falso
+		
+		fim
+	
+	fim
+	
+	operação toString() //operação que representa o modelo de forma textual
+		
+		inicio
+		
+			dado texto = nome+área+população+língua; //texto recebe dados do modelo
+			
+			retorna texto; //retorna texto
+			
+		fim
+		
+	fim
+
+fim do modelo

@@ -1,0 +1,37 @@
+Programa que calcula a média de números inteiros positivos e mostra a quantidade de números informados pelo usuário
+===================================================================================================================================================================================
+Descrição: Cálcua a média de números inteiros positivos fornecidos pelo usuário e informa a quantidade de números que o usuário passou
+Dados de entrada: números inteiros
+Dados de saída: Média dos números positivos e sua quantidade
+Obs: o número 0 é considero positivo neste algoritmo, o número negativo não é considerado para o cálculo da média e nem para o cálcula da quantidade
+===================================================================================================================================================================================
+Processo componente "Calcular média dos números inteiros positivos e cálculo da sua quantidade"
+
+	Declarar numero, soma, media, contador
+	Inicializar soma com 0
+	Inicialiar contador com 0
+
+	Obter numero
+
+	ENQUANTO numero >= 0 FAÇA
+		 
+		soma = soma + numero
+		contador = contador + 1
+		obter numero
+
+	FIM - ENQUANTO
+
+	SE contador = 0 ENTÃO
+		
+		media = 0
+
+	SENÃO FAÇA
+		
+		media = soma/contador
+
+	FIM - SE
+
+	Imprimir a mensagem: "A media dos números informados é media e a quantidade de números informados é contador"
+
+FIM - Processo componente "Calcular média dos números inteiros positivos e cálculo da sua quantidade"
+===================================================================================================================================================================================

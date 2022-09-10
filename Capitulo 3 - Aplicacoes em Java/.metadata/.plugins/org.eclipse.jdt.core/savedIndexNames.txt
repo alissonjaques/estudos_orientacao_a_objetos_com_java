@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\licin\Documents\Programação de Computadores\Java\Exercícios\Capítulo 3 - Rafael Santos\.metadata\.plugins\org.eclipse.jdt.core
+3490387197.index
+3243141061.index
+2474964043.index
+2538428657.index

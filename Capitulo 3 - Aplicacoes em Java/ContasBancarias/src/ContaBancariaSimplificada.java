@@ -1,0 +1,182 @@
+/**
+ * A classe ContaBancariaSimplifica representa uma conta corrente simplificada.
+ * @author Alisson Jaques 
+ * 
+ * */
+import java.util.Scanner;//importação do pacote util para utilização da classe Scanner
+
+public class ContaBancariaSimplificada {//declaração da classe
+
+	//declaração dos campos da classe
+	private String nomeDoCorrentista;
+	private double saldo;
+	private boolean contaÉEspecial;
+	
+	/**
+	 * O método abreConta recebe como parâmetro valores correspondentes aos campos da classe e inicializa os mesmos.
+	 * @param nome o nome do titular da conta
+	 * @param deposito o valor de depósito inicial
+	 * @param especial um valor booleano que representa se a conta é especial ou não
+	 * 
+	 * */
+	public void abreConta(String nome, double deposito, boolean especial) {
+		
+		nomeDoCorrentista = nome;
+		saldo = deposito;
+		contaÉEspecial = especial;
+		
+	}//fim do método abreConta
+	
+	/**
+	 * O método abreContaSimples recebe como argumento o nome do cliente e vai abrir para o mesmo uma conta simples. Esta conta não tem depósito inicial e não é especial.
+	 * @param nome o nome do titular da conta 
+	 * 
+	 * */
+	public void abreContaSimples(String nome) {
+		
+		nomeDoCorrentista = nome;
+		saldo = 0.00;
+		contaÉEspecial = false;
+		
+	}//fim do método abreContaSimples
+		
+	/**
+	 * O método deposita recebe como parâmetro um valor e o deposita na conta de um correntista.
+	 * @param valor o valor do depósito
+	 * 
+	 * */
+	public void deposita(double valor) {
+		
+		saldo  = saldo + valor;
+		
+	}//fim do método deposita
+	
+	/**
+	 * O metódo saca recebe como parâmetro um valor e pode retirar esse valor da conta do correntista (se tiver saldo)
+	 * ou imprimir uma mensagem de que não é possível sacar (se não tiver saldo).
+	 * @param valor o valor do saque
+	 * 
+	 * */
+	public void saca(double valor) {
+		
+		if(contaÉEspecial==false) {//se a conta não for especial
+			
+			if(valor <= saldo) {//se o saldo for suficiente
+				
+				saldo = saldo - valor; //saque o valor da conta do correntista
+				
+			}
+			else{//senão
+				
+				System.out.println("Operação não realizada! Saldo insuficiente.");//informe que não é possível fazer o saque
+				
+			}
+			
+		}
+		else {//se a conta for especial
+			
+			saldo = saldo - valor;//saque o valor da conta do correntista
+			
+		}
+				
+	}//fim do método saca
+	
+	/**
+	 * 	 * O método éIgual recebe como argumento uma instância da própria classe ContaBancariaSimplificada e verifica se a conta atual é igual à conta passada como parâmetro.
+	 * @param outraConta um instância da própria classe ContaBancariaSimplificada
+	 * @return true se as contas forem iguais
+	 * 		   false caso contrário
+	 * 
+	 * */
+	public boolean éIgual(ContaBancariaSimplificada outraConta) {
+		
+		if((nomeDoCorrentista==outraConta.nomeDoCorrentista)&&(saldo==outraConta.saldo)&&(contaÉEspecial==outraConta.contaÉEspecial)) {//se as conta forem iguais
+			
+			return true;//retorne são iguais
+			
+		}
+		else {//senão
+			
+			return false;//retorne são diferentes
+			
+		}
+	}//fim do método éIgual
+	
+	/**
+	 * O método transferenciaEntreContas recebe como argumento uma instância da própria classe ContaBancária Simplifica e transfere um valor informado pela usuário da instância atual
+	 * para a conta do correntista passada como argumento.
+	 * @param umaConta uma instância da própria classe ContaBancariaSimplifica
+	 * 	 * 
+	 * */
+	public void transferenciaEntreContas(ContaBancariaSimplificada umaConta) {
+		
+		//declaração de variável auxiliar
+		double valorTransferencia;
+		
+		//solicitamos ao correntista que informe o valor a ser transferido de sua conta e armazenamos esse valor na variável auxiliar
+		System.out.println("Informe o valor a ser trânsferido: ");
+		Scanner valorInformado = new Scanner(System.in);
+		valorTransferencia = valorInformado.nextDouble();
+		
+		if(valorTransferencia>saldo) {//se o valor da transferência for maior do que o valor do saldo
+			
+			System.out.println("Transação não podê ser efetivada, pois não há saldo suficiente.");//informe ao usuário que ele não possuí saldo suficiente para a operação
+		}
+		else {//senão
+		
+			saca(valorTransferencia);//saque o valor informado da conta do usuário
+			umaConta.deposita(valorTransferencia);//trânsfira para a conta passada como argumento
+		
+		}
+		
+	}//fim do método transferenciaEntreContas
+	
+	/**
+	 * O método toString não possuí argumentos, quando chamado retorna uma string contendo os campos da instância formatados.
+	 *  
+	 * */
+	public String toString() {
+		
+		String correntista;//declaração de referencia auxiliar
+		
+		if(contaÉEspecial==true) {//se a conta for especial
+			
+			//a refêrencia auxiliar recebe os campos do objeto formatados
+			correntista = "O nome do correntista é: "+nomeDoCorrentista+"\n"+"Saldo disponível: "+saldo+"\n"+"A conta é especial";
+			
+			return correntista;//retorna a string com os campos do objeto formatados
+			
+		}
+		else {//senão
+			
+			//a refêrencia auxiliar recebe os campos do objeto formatados
+			correntista = "O nome do correntista é: "+nomeDoCorrentista+"\n"+"Saldo disponível: "+saldo+"\n"+"A conta é comum";
+			
+			return correntista;//retorna a string com os campos do objeto formatados
+	
+		}
+				
+	}//fim do método toString
+	
+	/**
+	 * O método mostraDados não possuí argumentos, quando chamado imprime os campos da instância formatados.
+	 *  
+	 * */
+	public void mostraDados() {
+		
+		System.out.println("O nome do correntista é: "+nomeDoCorrentista);//imprime o nome do correntista
+		System.out.println("Saldo disponível: "+saldo);//imprime o saldo atual
+		if(contaÉEspecial==true) {//se a conta for especial
+			
+			System.out.println("A conta é especial.");//informe que a conta é especial
+			
+		}
+		else {//senão
+			
+			System.out.println("A conta é comum.");//informe que a conta é comum
+	
+		}
+				
+	}//fim do método mostraDados
+	
+}//fim da classe contaBancariaSimplificada

@@ -1,0 +1,100 @@
+modelo ContaBancariaSimplificada	
+
+inicio do modelo
+
+	dado nomeDoCorrentista, saldo, contaÉEspecial; //dados da conta
+	
+	//Inicializa simultaneamente todos os dados do modelo
+	operação abreConta(nome,deposito,especial)//argumentos para esta operação
+	
+		inicio
+		
+			//Usa os argumentos passados para inicializar os dados do modelo
+			nomeDoCorrentista = nome;
+			saldo = deposito;
+			contaÉEspecial = especial;
+		
+		fim
+	
+	fim
+	
+	//Inicializa simultaneamente os dados do modelo, usando o nome
+	//passado como argumento e os outros valores com valores default
+	operação abreContaSimples(nome)
+	
+		inicio
+		
+			nomeDoCorrentista = nome;
+			saldo = 0.00;
+			contaÉEspecial = falso;
+			
+		fim
+	
+	fim
+	
+	//deposita um valor na conta
+	operação deposita(valor)
+	
+		inicio
+		
+			saldo = saldo + valor;
+			
+		fim
+	
+	fim
+	
+	//Retira um valor da conta
+	operação retira(valor)
+	
+		inicio
+		
+			se (contaÉEspecial==falso //A conta não é especial!
+			
+				inicio
+				
+					se(valor <= saldo //se existe saldo suficiente...
+						saldo = saldo - valor; //faz retirada.
+					fim
+				
+				fim
+				
+			senão //A conta é especial, pode retirar à vontade!
+				saldo = saldo - valor;
+			fim
+			
+		fim
+	
+	fim
+	
+	operação transferenciaEntreContas(outraConta)
+		
+		inicio
+		
+			Imprime "Informe o valor do saque: ";
+			
+			valor = saque;
+			
+			retira(valor);
+			outraConta.deposita(valor);
+			
+		fim
+	
+	fim
+			
+	
+	operação mostraDados() //mostra os dados da conta, imprimindo os seus valores
+	
+		inicio
+		
+			imprime "O nomedo correntista é ";
+			imprime nomeDoCorrentista;
+			imprime "O saldo é ";
+			imprime saldo;
+			se (contaÉEspecial) imprime "A conta é especial.";
+			senão imprime "A conta é comum.";
+			
+		fim
+		
+	fim
+
+fim do modelo

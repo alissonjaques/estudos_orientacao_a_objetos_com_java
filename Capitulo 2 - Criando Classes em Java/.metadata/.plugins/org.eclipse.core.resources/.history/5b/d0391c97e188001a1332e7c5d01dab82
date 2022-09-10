@@ -1,0 +1,34 @@
+/**
+ * A classe veículo possuí atributos e métodos que representam um veículo qualquer
+ *
+ * @author Alisson Jaques 
+ *
+ */
+public class Veiculos { //declara a classe
+	
+	/**
+	 *  Declaração dos campos da classe
+	 * 
+	 */
+	
+	private String nomeVeiculo;
+	private short quantidadeMaximaPassageiros;
+	private String tipoVeiculo;
+	private byte numeroDeRodas;
+	
+	//Inicializa simultaneamente os dados do modelo veículo
+	
+	public void registraVeiculo(String nome, short quantidade, String tipo, byte quantidadeRodas) {
+		
+		nomeVeiculo = nome;
+		quantidadeMaximaPassageiros = quantidade;
+		tipoVeiculo = tipo;
+		numeroDeRodas = quantidadeRodas;		
+		
+	}
+	
+	
+	
+	
+	
+}

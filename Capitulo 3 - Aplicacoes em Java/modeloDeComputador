@@ -1,0 +1,105 @@
+modelo Computador
+
+inicio do modelo
+	
+	//declaração dos campos do modelo
+	dados placaMae = 800.00, processador, memoria, discoRidido, tamanhoMonitor, valor = 0;
+	
+	//inicializa simultaneamente os campos restantes do modelo
+	operação inicializaComputador (umProcessador, umaMemoria, umDiscoRigido, umTamanhoMonitor)
+	
+		inicio
+			
+			processador = umProcessador;
+			memoria = umaMemoria;
+			discoRidido = umDiscoRigido
+			tamanhoMonitor = umTamanhoMonitor;
+			
+		fim
+		
+	fim
+	
+	//usa os campos do modelo inicializado para calcular o preço do computador
+	operação calculaPreço()
+	
+		inicio
+		
+			se (processador = 600)                                             //se a frequência do processodor for 600Mhz
+			
+				valor = valor + 700;                                           //some ao valor total R$700;00
+	
+			senão se(processador = 800)                                        //se a frequência do processodor for 800Mhz
+			
+				valor = valor + 830;                                           //some ao valor total R$830;00
+			
+			senão se(processador = 933)                                        //se a frequência do processodor for 933Mhz
+				
+				valor = valor + 910;                                           //some ao valor total R$910;00
+				
+			fim
+		
+			se (memoria = 128)                                                 //se o tamanho da RAM for 128 Mb
+			
+				valor = valor + 350;                                           //some ao valor total R$350;00
+	
+			senão se(memoria = 256)                                            //se o tamanho da RAM for 256 Mb
+			
+				valor = valor + (2*350);                                       //some ao valor total o dobro de R$350;00
+			
+			senão se(memoria = 384)                                            //se o tamanho da RAM for 384 Mb
+				
+				valor = valor + (3*350);                                       //some ao valor total  o triplo de R$350;00
+				
+			senão se(memoria = 512)                                            //se o tamanho da RAM for 512 Mb
+			
+				valor = valor + (4*350)                                        //some ao valor total o quádruplo de R$350;00
+				
+			fim
+			
+			se (discoRidido = 20)                                              //se o tamanho do disco for 20 GB
+			
+				valor = valor + 300;                                           //some ao valor total R$300;00
+	
+			senão se(discoRidido = 40)                                         //se o tamanho do disco for 40 GB
+			
+				valor = valor + 420;                                           //some ao valor total R$420;00
+			
+			senão se(discoRidido = 60)                                         //se o tamanho do disco for 60 GB
+				
+				valor = valor + 500;                                           //some ao valor total R$500;00
+				
+			fim
+			
+			se (tamanhoMonitor = 15)                                           //se o tamanho do monitor for 15 polegadas
+			
+				valor = valor + 320;                                           //some ao valor total R$320;00
+	
+			senão se(tamanhoMonitor = 17)                                      //se o tamanho do monitor for 17 polegadas
+			
+				valor = valor + 520;                                           //some ao valor total R$520;00
+	
+			fim
+		
+			valor = valor + placaMae;                                          //some ao valor total o valor da placa-mãe
+			
+			retorna valor;                                                     //retorne o valor total
+		
+		fim
+	
+	fim
+	
+	//verifica se um computador é igual a outro
+	operação éIgual(outroComputador)
+		
+		inicio
+		
+			se((processador=outroComputador.processador)e(memoria=outroComputador.memoria)e(discoRidido=outroComputador.discoRidido)e(tamanhoMonitor=outroComputador.tamanhoMonitor))
+				retorna verdadeiro
+			senão
+				retonar falos
+			fim
+		
+		fim
+	fim
+	
+fim do modelo	

@@ -1,0 +1,70 @@
+public class RetasNoPlano {
+	
+	private Ponto2D a;
+	private Ponto2D b;
+	
+	RetasNoPlano(Ponto2D umA, Ponto2D umB){
+		
+		a = new Ponto2D(umA.retornaCoordenadaX(),umA.retornaCoordenadaY());
+		b = new Ponto2D(umB.retornaCoordenadaX(),umB.retornaCoordenadaY());
+		
+	}
+	
+	RetasNoPlano(Ponto2D umA){
+		
+		a = new Ponto2D(umA.retornaCoordenadaX(),umA.retornaCoordenadaY());
+		b = new Ponto2D();
+		
+	}
+	
+	RetasNoPlano(){
+		
+		a = new Ponto2D();
+		b = new Ponto2D();
+		
+	}
+	
+	RetasNoPlano(double x1, double y1, double x2, double y2){
+		
+		a = new Ponto2D(x1,y1);
+		b = new Ponto2D(x2,y2);
+				
+	}
+	
+	public double calculaCoeficienteAngular() {
+		
+		if(b.retornaCoordenadaY() > a.retornaCoordenadaY()) {
+			
+			if(b.retornaCoordenadaX() == a.retornaCoordenadaX()) {
+				
+				return 0; // tangente sem definição
+				
+			}
+			else {
+				
+				return ((b.retornaCoordenadaY()-a.retornaCoordenadaY())/(b.retornaCoordenadaX()-a.retornaCoordenadaX()));
+			
+			}
+		}
+		else if(a.retornaCoordenadaY() > b.retornaCoordenadaY()) {
+			
+			if(b.retornaCoordenadaX() == a.retornaCoordenadaX()) {
+				
+				return 0; // tangente sem definição
+				
+			}
+			else {
+				
+				return ((a.retornaCoordenadaY()-b.retornaCoordenadaY())/(a.retornaCoordenadaX()-b.retornaCoordenadaX()));
+			
+			}
+						
+		}
+		else {
+			
+			return 0; // tangente sem definição
+			
+		}
+				
+	}
+}

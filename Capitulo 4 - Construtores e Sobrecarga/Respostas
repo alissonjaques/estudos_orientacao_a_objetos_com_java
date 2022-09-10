@@ -1,0 +1,170 @@
+====================================================Respostas Capítulo 4===============================================================
+
+Questão 4:
+
+O construtor não possuí o mesmo nome da classe em questão pois java é case sensitive, ou seja, considera maísculas diferentes de minús-
+culas, logo ocorrerá um erro na compilação dessa classe.
+
+Questão 5: 
+
+O construtor da classe pois modifificador de acesso, o que não pode ocorrer. Isso implicará em erro na compilação dessa classe.
+
+Questão 6:
+
+O construtor da classe possuí indicação de retorno, isso não pode ocorrer, nem mesmo se o retorno for void.
+
+Questão 7:
+
+Construtores são chamados por outros construtores pela palavra-chave this, como um construtor dessa classe chama outro pelo nome essa
+classe não poderá ser compilada.
+
+Questão 8:
+
+Construtores:
+
+RoboSimples(String,int,int,char)
+RoboSimples(String)
+RoboSimples()
+
+métodos sobrecarregados:
+
+move()
+move(int)
+
+métodos:
+
+mudaDireção(char)
+toString()
+
+Questão 9:
+
+Os dois construtores possuem mesma assinatura, isso não pode ocorrer.
+
+Questão 10:
+
+linha 5: erro
+Não existe construtor com assinatura EventoAcadêmico() na classe EventoAcadêmico
+
+linha 7: erro
+Não existe construtor com assinatura EventoAcadêmico(String,String) na classe EventoAcadêmico
+
+Quêstão 11:
+
+Não, pois não existe o método com assinatura move(int,int) na classe RoboSimples.
+
+Também não, pois o conjunto double é maior do que o conjunto int, sendo assim senão fizermos um cast explícito o compilador não irá
+promover o tipo e derá erro de compilação.
+
+Também não, pois não existe o método com assinatura move(boolean) na classe RoboSimples e o tipo booleano não pode ser promovido nem
+rebaixado.
+
+Questão 12:
+
+Na linha 7: o construtor sem argumentos chama o construtor com assinatura DemoConstrutor(int,int) pelo nome e não pela palavra-chave
+this, o que ocasionará erro de compilação.
+Na linha 7: o construtor sem argumentos chama o construtor com assinatura DemoConstrutor(int,int) depois de executar outra linha de
+comando. Sabemos que a chamada a construtores devem sempre estar na primeira linha de comando do construtor que esta chamando, senão
+haverá erro na compilação.
+
+Linhas 6 e 12: o mau uso do comando de saída de dados imprime resultados estranhos para o programador usuário da classe. Como as duas
+frases ao mesmo tempo, por exemplo, quando chamamos o construtor sem argumentos.
+
+Questão 13:
+
+Os nomes dos métodos iniciam com letra maiúscula, o que não é indicado como boa prática de programação.
+O tipo de retorno não é considerado na assinatura dos métodos, assim nas linhas 3 e 7 temos métodos com mesma assinatura Move(int,int)
+o que não pode ocorrer.
+
+Questão 15:
+
+move() e move(int)
+
+move() - pode, pois é um método com assinatura válida na classe RoboSimples
+move(1) - pode, pois 1 é um valor inteiro
+move('A') - pode, pois o caracter 'A' é convertido para seu código numérico (int) pelo compilador
+move("A") - não pode, pois o tipo String possuí um conjunto maior que o tipo int
+move(1/3) - não pode, o compilador não promove o dado float em int, pois esse conjunto contém o conjunto int
+move(2,3,5) - não pode, não existe método com assinatura move(int,int,int) na classe RoboSimples
+move(9,false) - não pode, não existe método com assinatura move(int,boolean) na classe RoboSimples
+move("17") - não pode, pois o tipo String possuí um conjunto maior que o tipo int
+move((long)3); é feito um cast para o valor 3, para o tipo long. Como esse tipo contém o tipo int a chamada dará erro de compilação
+move((char)65); pode, o numero 65 será representado por um código que representa o caracter '65', como esse código é um valor inteiro
+o compilador executará o comando sem erros.
+
+Questão 17:
+
+O argumento seria considerado uma concatenação de textos, pois iria concatenar a String vazia com a string retornada pelo método toString
+da referência número5. Logo seria acionado o construtor que tem assinatura RoboSimples(String) e não haveria erro nessa linha.
+
+Questão 19:
+
+O compilador só chamará automaticamente o método toString padrão (sem argumentos), para chamarmos os outros métodos sobrecarregados
+teríamos que usar um comando explicíto de chamada de métodos para os objetos. Tirando essa pequena diferença, tudo ocorre como o es-
+perado.
+
+Questão 23:
+
+class Soma {
+
+	public int doisValores(int a,int b){ // soma dois inteiros
+	
+		return a+b;
+	
+	}
+	public double doisValores(double a,int b){ // soma um double e um inteiro
+	
+		return a+b;
+	
+	}
+	public double doisValores(double a,double b){ //soma dois doubles
+	
+		return a+b;
+	}
+
+}
+
+class TesteSoma{
+
+	public static void main(String[] args){
+	
+		Soma soma = new Soma(); // cria instância da classe Soma
+		// Declara várias variáveis
+		byte b = 20;
+		short s = 99;
+		int i = 1000;
+		long l = 1234L;
+		float f = 3.1416f;
+		double d = 2000;
+		// Chama vários métodos da classe Soma
+		System.out.println(soma.doisValores(b,s)); // soma(byte,short) => soma(int,int)
+		System.out.println(soma.doisValores(i,s)); // soma(int,short) => soma(int,int)
+		System.out.println(soma.doisValores(i,i)); // soma(int,int) => soma(int,int)
+		System.out.println(soma.doisValores(l,b)); // soma(long,byte) => soma(double,int)
+		System.out.println(soma.doisValores(f,s)); // soma(float,short) => soma(double,int)
+		System.out.println(soma.doisValores(d,b)); // soma(double,byte) => soma(double,int)
+		System.out.println(soma.doisValores(b,d)); // soma(byte,double) => soma(double,double)
+		System.out.println(soma.doisValores(i,l)); // soma(int,long) => soma(double,double)
+		System.out.println(soma.doisValores(l,l)); // soma(long,long) => soma(double,double)
+		System.out.println(soma.doisValores(d,f)); // soma(double,float) => soma(double,double)
+
+	}
+
+}
+
+Questão 29:
+
+assinaturas:
+
+inicializaData(byte,byte,short)
+inicializaData(int,int,int)
+
+A assinatura inicializaData(byte,byte,short) nunca será executada, pois o compilador faz o cast automátio para int no momento da lei-
+tura da chamada do método. Assim esse bloco de função torna-se inútil, tornando a classe mais difícil de entender (por conter conteúdos
+praticamente indênticos, sendo um sem utilidade).
+
+Questão 31:
+
+O usuário das classes poderia reutilizar referências à instâncias da classe data e colocar essas referências (com novos campos inicia-
+lizados) como argumento para o construtor, de uma nova instância, da classe EventoAcademico. Isto faria com que todas as datas, de 
+todas as referências da classe EventoAcademico, fossem iguais, pois quando se iguala uma refência a outra, a mesma aponta para o mesmo
+endereço de memória da referência atribuída.

@@ -1,0 +1,121 @@
+====================================================== Respostas de questões teóricas: ==========================================================
+
+
+Questão 9.1:
+
+Ocorroreria erro de compilação, pois a classe deixaria de ser abstrata, porém ainda teria métodos abstratos, o que não pode ocorrer.
+
+Questão 9.2:
+
+Por que a ideia de uma classe ser abstrata é o fato da mesma ser a mais genérica possível, neste contexto não seria interessante ter declarações
+do corpo de seus métodos, visto que os mesmos serão diferentes para as classes que implementam essa classe abstrata.
+
+Questão 9.4:
+
+A classe possui métodos abstratos, porém não é abstrata. Isso fará com que ocorra erro de compilação.
+
+Questão 9.5:
+
+Os campos da classe foram declaradados como abstract, porém esse modificador só deve ser usuado em classes abstratas ou métodos de classes
+abstratas/interfaces.
+
+Questão 9.6:
+
+Método abstrato não pode possuir corpo.
+
+Questão 9.7:
+
+Uso da palavra-chave "extends" ao invés da palavra-chave "implements" irá ocosionar erro de compilação, afinal a classe DiscoOtico herda 
+da classe abstrata Dispositivo.
+
+Questão 9.8:
+
+A classe possui métodos abstratos, mas não é abstrata. O método abstrato da classe é private, o que não pode ocorrer, visto que as classes
+herdeiras não consiguirão acessá-lo diretamente, e nem mesmo o método toString, por ser público e chamar esse método private.
+
+Questão 9.10:
+
+Construtores são métodos especiais, que são chamados no momento de alocação do objeto. São métodos que estão interligados à classe, e são acessa-
+dos por classes herdeiras através da palavra-chave "super", em outras palavras não faz sentido esse método ser abstract, pois uma classe herdeira
+pode implementar seu construtor da maneira com achar melhor, sem precisar de um modelo.
+
+Questão 9.10:
+
+Uma interface é um modelo a ser seguido por classes que a implemente. Seus métodos não possuem corpo, apenas assinatura, devido a isso a mesma não pode
+possuir métodos estáticos, pois estes são métodos inerentes à classes e não objetos.
+
+Questão 9.11:
+
+Porque uma interface não pode ser instânciada.
+
+Questão 9.12:
+
+Ocorreria erro de compilação, pois o método espera um tipo de objeto geométrico e a classe String não implementa essa interface.
+
+Questão 9.13:
+
+Ocorreria erro de compilação, pois ObjetoGeometrico é uma interface e não pode ser instânciada.
+
+Questão 9.14:
+
+Não existem erros na classe.
+
+Questão 9.17:
+
+Não podemos. Ocorrerá erros de compilação.
+
+Private -> Todos os métodos de uma interface devem ser públicos e implementados por classes herdeiras (elas herdam esse método, portando devem
+acessá-lo diretameente)
+
+Static -> Não podemos instânciar interfaces, assim não é possível termos métodos de classes (estáticos)
+
+Final -> Cada classe que implemente uma interface possui a liberdade de implementar o corpo dos métodos dessa interface da sua maneira, logo não faz 
+sentido um método de uma interface ser final.
+
+Questão 9.22:
+
+Todas as classes em java herdam de Object. Logo, mesmo que a classe não implemente o toString ela o herda de object, assim não viola a determinação da
+interface.
+
+Questão 9.23:
+
+Não podemos, pois métodos de interfaces não possuem corpo.
+
+Questão 9.24:
+
+* A variável tamanho não é declarada no código, porém é utilizada.
+* A classe Contador não implementa o método modifica(int) da interface Modificavel, como está classe implementa a interface Modificavel o método 
+obrigatoriamente deveria ser criado.
+
+Questão 9.25:
+
+A classe Contador implementa as interfaces Resetavel e Modificavel, ambas possuem a declaração de um método com a mesma assinatura (void reseta()), porém, no 
+corpo da classe Contador, foram declarados dois métodos com a mesma assinatura (void reseta()), o que não pode ocorrer, deveria ser apenas um, que valerá para 
+as duas interfaces.
+
+Questão 9.35 e 9.36 praticamente iguais à questão 9.34
+
+Questão 9.41:
+
+Porque eles são automaticamente declarados com static e final, ou seja, são considerados como constantes e por isso devem ser inicializados.
+
+Questão 9.42:
+
+Existem desvantagens, pois se o código cresce muito fica complicado ter que ficar revendo se o campo é da classe ou do método, o ideal é seguir o padrão
+de encapsulamento, onde os termos get e set indicam que estamos lidando com campos privados da classe.
+
+Quesão 9.43:
+
+Ocorreria erro de compilação, pois o campo que o objeto está tentando acessar é static e final.
+
+Questão 9.44:
+
+Porque, na essência, nem todos os livros são itens de bibliotecas.
+
+Questão 9.45:
+
+No método empresta e toString.
+
+Questão 9.48:
+
+Será preciso que os métodos que utilizam as coordenadas do ponto sejam modificados, utilizando o metóto getX e getY da classe Ponto2D

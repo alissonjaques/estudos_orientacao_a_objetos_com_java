@@ -1,0 +1,43 @@
+														******** Respostas Capítulo 10 ********
+														
+Questão 10.1:
+
+A classe DataHora não irá compilar, pois tentará acessar os campos da classe hora diretamente e estes são protegidos.
+A classe DemoData hora não pertence ao pacote DataHora e, devido a isso, ocorrerá erro na compilação.
+
+Questão 10.2:
+
+Só será importada a classe DataHora e as classes Data e Hora, que não foram importadas, não poderão ser utilizadas, ocasionando erro de compilação.
+
+Questão 10.3:
+
+Porque ela pertence ao pacote default e, portanto, é pública para todas as outras classes.
+
+Questão 10.4:
+
+A classe possui um único campo e este é privado, o que a torna sem sentido. O ideal seria que este campo tivesse o modificador default ou public.
+
+Questão 10.5:
+
+Os campos x e y são públicos para todas as classes do pacote br.univap.bioinfo.geral, apesar de serem declarados com protected.
+
+Questão 10.6:
+
+Porque a classe ArenaBasica não herda de RoboBasico.
+
+Questão 10.7:
+
+A classe Ponto2D não possui construtor default. Como no construtor da classe Ponto3D os campos herdados são inicializados diretamente, o construtor default
+da classe Ponto2D será chamado, como ele não existe ocorrerá erro de compilação.
+
+Questão 10.8:
+
+O nome do construtor está Ponto2D, porém a classe chama-se Ponto3D.
+
+Questão 10.9:
+
+Não é possível importar n pacotes em uma única instrução.
+
+Questão 10.10:
+
+Não é possível importar n pacotes em uma única instrução e também não é possível importar classes de pacotes diferentes em uma mesma instrução.

@@ -1,0 +1,104 @@
+modelo Linhas
+
+inicio do modelo
+
+	dado pontoA, pontoB;
+	
+	operação inicializaCamposDoModelo(dado umA, dado umB)
+	
+		inicio
+		
+			pontoA = umA;
+			pontoB = umB;
+			
+		fim
+	
+	fim
+	
+	operação calculaCoeficienteAngular()
+	
+		inicio
+		
+			se(yB>yA)
+			
+				se(xA==xB)
+				
+					retorna 0;
+				
+				senão
+				
+					retorna (yB-yA)/(xB-xA);
+				
+				fim-se
+				
+			senão se(yA>yB)
+				
+				se(xA==xB)
+				
+					retorna 0;
+					
+				senão
+				
+					retorna (yA-yB)/(xA-xB);
+				
+				fim-se
+			
+			senão
+			
+				retorna 0;
+				
+			fim-se
+		
+		fim
+	fim
+	
+	operação calculaCoeficienteLinear()
+		
+		inicio
+		
+			dado m,n;
+			
+			m = calculaCoeficienteAngular();
+			
+			n = yA -m*xA;
+			
+			retorna n;
+			
+		fim
+		
+	fim
+	
+	operação éParalela(Linha outraLinha)
+		
+		inicio
+			
+			se(m1==m2)
+				
+				se(n1==n2)
+					
+					retas coincidentes
+	
+				senão
+						
+					retas paralelas
+					
+				fim-se
+				
+			senão
+				
+				se(m1=-(1/m2))
+
+					retas perpendiculares
+						
+				senão
+				
+					retas concorrentes
+					
+				fim-se
+				
+			fim-se
+		fim
+
+	fim
+	
+fim

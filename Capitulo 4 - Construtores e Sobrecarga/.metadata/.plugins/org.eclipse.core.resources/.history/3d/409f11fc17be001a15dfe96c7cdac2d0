@@ -1,0 +1,12 @@
+public class RetasNoPlano {
+	
+	private Ponto2D A;
+	private Ponto2D B;
+	
+	RetasNoPlano(Ponto2D umA, Ponto2D umB){
+		
+		
+		
+	}
+
+}

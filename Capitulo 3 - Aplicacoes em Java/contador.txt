@@ -1,0 +1,64 @@
+modelo Contador
+
+inicio do modelo
+
+	dado valor, numeroInteracoes;
+	
+	operação inicializaContador(umValor, umNumeroInteracoes)
+		
+		inicio
+			
+			valor = umValor;
+			numeroInteracoes = umNumeroInteracoes;
+			
+		fim
+		
+	fim
+
+	operação zeraValor(valor)
+		
+		inicio
+		
+			valor = 0;
+		
+			retorna valor;
+		
+		fim
+	
+	fim
+	
+	operação incrementaValor(valor,numeroInteracoes)
+		
+		inicio
+		
+			dado indice;
+		
+			indice = 1;
+		
+			enquanto (indice <= numeroInteracoes) faça
+		
+				valor = valor + 1;
+				indice = indice + 1;
+			
+			fim
+		
+			retorna valor;
+		
+		fim
+	
+	fim
+	
+	
+	operação toString(){
+		
+		inicio
+		
+			String resultado = valor;
+		
+			retorna resultado;
+		
+		fim
+	
+	fim
+	
+fim do modelo

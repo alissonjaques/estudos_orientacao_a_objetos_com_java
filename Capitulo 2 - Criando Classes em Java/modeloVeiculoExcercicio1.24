@@ -1,0 +1,62 @@
+modelo Veiculo //Representa um veículo
+
+início do modelo
+
+	dado nomeVeículo, quantidadeMáxixaPassageiros, tipoVeiculo, númeroDeRodas; //dados do veículo
+	
+	//inicializa simultaneamente os dados do modelo
+	operação registraVeículo(nome,quantidade,tipo,quandidadeRodas)
+	
+		início
+		
+			//usa os argumentos passados para inicializar os dados do modelo
+			nomeVeículo = nome;
+			quantidadeMáxixaPassageiros = quantidade;
+			tipoVeiculo = tipo;
+			númeroDeRodas = quandidadeRodas;
+			
+		fim
+	
+	//verifica se o veículo é capaz de andar na terra
+	operação andarNaTerra(dado tipo){
+	
+		início
+			se (tipo=='carro'/'moto'/'Caminhão'/'n')
+		
+				retorna verdadeiro;
+		
+		
+			senão
+		
+				retorna falso;
+		fim
+	
+	//verifica se o veículo é capaz de andar na água
+	operação andarNaÁgua(dado tipo)
+	
+		inicio
+		
+			se (tipo=='iate'/'navio'/'fragata'/'n')
+		
+				retorna verdadeiro;
+				
+			senão
+		
+				retorna falso;
+		fim
+	
+	//verifica se o veículo é capaz de voar
+	operação voaNoCéu(dado tipo)
+	
+		inicio
+		
+			se (tipo=='avião'/'helicóptero'/'jato'/'n')
+		
+				retorna verdadeiro;
+				
+			senão
+		
+				retorna falso;
+		fim
+		
+fim do modelo
